@@ -1,4 +1,5 @@
 package taller3.televisores;
+import taller3.televisores.TV.*;
 
 public class Control {
 	private TV tv;

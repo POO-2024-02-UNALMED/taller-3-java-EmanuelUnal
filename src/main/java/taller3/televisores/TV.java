@@ -1,5 +1,4 @@
 package taller3.televisores;
-import taller3.televisores.*;
 
 public class TV {
 	private Marca marca;
@@ -8,7 +7,7 @@ public class TV {
 	private boolean estado;
 	private int volumen;
 	private Control control;
-	private static int numTV;
+	public static int numTV;
 	
 	public TV (Marca marca, boolean estado) {
 		this.marca = marca;
@@ -51,11 +50,11 @@ public class TV {
     public void setControl(Control control){
         this.control = control;
     }
-    public int getnumTV () {
-    	return this.getnumTV();
+    public static int getNumTV () {
+    	return TV.numTV;
     }
-    private void setnumTV (int numTV) {
-    	this.numTV = numTV;
+    public static void setNumTV (int nuevonumTV) {
+    	TV.numTV = nuevonumTV;
     }
     public void turnOn() {
 		this.estado = true;
@@ -66,23 +65,23 @@ public class TV {
     public boolean getEstado() {
 		return this.estado;
 	}
-    public void canalUp(int canal) {
-        if(this.estado == true && canal < 120){
+    public void canalUp() {
+        if(this.estado == true && this.canal < 120){
 		this.canal++;
         }
 	}
-	public void canalDown(int canal) {
-		if(this.estado == true && canal > 1){
+	public void canalDown() {
+		if(this.estado == true && this.canal > 1){
 		this.canal--;
         };
 	}
-    public void volumenUp(int volumen) {
-        if(this.estado == true && volumen < 7){
+    public void volumenUp() {
+        if(this.estado == true && this.volumen < 7){
 		this.volumen++;
         }
 	}
-	public void volumenDown(int volumen) {
-		if(this.estado == true && volumen > 0){
+	public void volumenDown() {
+		if(this.estado == true && this.volumen > 0){
             this.volumen--;
             }
 	}
